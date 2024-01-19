@@ -1,0 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface:regular&display=swap);
+body {
+	height: 100vh;
+	font-family: 'Abril Fatface', cursive;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+}
+
+.heading {
+	font-size: 10rem;
+	font-weight: 900;
+	background-image: url(img/bg.avif);
+	background-size: cover;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
