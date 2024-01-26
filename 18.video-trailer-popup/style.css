@@ -1,0 +1,92 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.image-container {
+	background: url('files/frostpunk-poster.jpg') center top / cover no-repeat;
+	height: 100vh;
+	position: relative;
+}
+
+.play {
+	display: block;
+	position: absolute;
+	bottom: 20px;
+	right: 50px;
+	width: 100px;
+	height: 100px;
+	stroke: #caedf4;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	border-radius: 50%;
+	animation: bounce 1s ease-in infinite;
+}
+
+.trailer-container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.7s ease 0s;
+}
+
+.active.trailer-container {
+	visibility: visible;
+	opacity: 1;
+}
+
+.trailer-container video {
+	position: relative;
+	max-width: 900px;
+	outline: none;
+}
+
+.close-icon {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	color: #caedf4;
+	cursor: pointer;
+	font-family: sans-serif;
+	font-size: 30px;
+	border-radius: 100%;
+	background-color: transparent;
+	border: none;
+	transition: color 0.3s ease 0s;
+}
+
+@media (hover: hover) {
+	.close-icon:hover {
+		color: #f26415;
+	}
+}
+@media (max-width: 991px) {
+	.trailer-container video {
+		max-width: 90%;
+	}
+}
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: translateY(-20px);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	}
+}
