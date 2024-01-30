@@ -1,0 +1,58 @@
+:root {
+	--primary-color: white;
+	--primary-label: black;
+	--secndary-label: white;
+	--white-ball: white;
+	--black-ball: black;
+}
+
+body {
+	background-color: var(--primary-color);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.toggle-input {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+.toggle-label {
+	display: block;
+	width: 100px;
+	height: 50px;
+	background-color: var(--primary-label);
+	border-radius: 100px;
+	position: relative;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.toggle-label::after {
+	content: '';
+	width: 40px;
+	height: 40px;
+	border-radius: 70px;
+	background-color: var(--white-ball);
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	transition: 0.5s;
+}
+
+.toggle-input:checked + .toggle-label::after {
+	background-color: var(--black-ball);
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+.toggle-input:checked + .toggle-label {
+	background-color: var(--secndary-label);
+}
+
+.toggle-label:active::after {
+	width: 60px;
+}
