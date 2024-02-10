@@ -33,7 +33,7 @@ function updateUI() {
 		}
 	});
 
-	const actives = document.querySelectorAll('.active');
+	const actives = document.querySelectorAll('.circle.active');
 	progress.style.width =
 		((actives.length - 1) / (circles.length - 1)) * 100 + '%';
 
